@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Press me" onclick="alert('Arggggh they have pressed on me!');
+    alert('Arggggh they have pressed AGAIN on me!')">
+    <!-- можно просто через <button></button> -->
+    <button ondblclick="press()">I've worked on double click</button>
+
+    <!-- <input type="button" value="0" class="clicker" onclick="this.value++"> Либо так можно сделать -->
+    <input type="button" value="0" class="clicker" onclick="btnClick(this)">
+
+    <ul class="test-list">
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Error beatae unde explicabo consequuntur!</li>
+        <li>Voluptatum saepe blanditiis est earum.</li>
+        <li>Ipsam, velit itaque. Consequatur, eos?</li>
+        <li>Exercitationem possimus magni mollitia suscipit?</li>
+        <li>Ex sint delectus repudiandae officia.</li>
+    </ul>
+
+    <script>
+        // самовызывающая функция (полное тело функции)();
+        // автоматический вызов функции вместо editList();
+        (function editList() {
+            let list = document.querySelector('.test-list');
+            list.innerHTML = '<li>УДАЛЕНО!</li>';
+        })(); 
+
+        editList();
+
+        function press() {
+            console.log('They constantly press on me!');
+        }
+        function btnClick(params) {
+            params.value++;
+            params.className = 'test'; // изменение названия класса\
+            params.disabled = true;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- <script src="date.js"></script> -->
+    <!-- <script src="constructor-func.js"></script> -->
+    <!-- <script src="getter_setter.js"></script> -->
+    <!-- <script src="extends.js"></script> -->
+</body>
+
+</html>
